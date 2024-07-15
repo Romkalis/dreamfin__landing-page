@@ -1,0 +1,167 @@
+.advantages .advantages__overflow {
+    overflow: visible;
+}
+.advantages {
+    margin-bottom: clamp(50px, 13vw, 200px);
+}
+
+.advantages__title {
+    margin-bottom: clamp(30px, 5vw, 60px);
+}
+
+.advantages__list {
+
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(6, 1fr);
+    max-width: 1520px;
+}
+
+.advantages__card {
+    grid-column: span 2;
+    width: 100%;
+    padding: 40px clamp(10px, 2.5vw, 40px);
+    width: clamp(150px, 30vw, 500px);
+    border-radius: clamp(10px, 3vw, 50px);
+    border: 2px solid var(--c-main);
+    background-color: var(--c-light);
+
+    &-front {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        row-gap: clamp(30px, 5vw, 60px);
+    }
+    &-back {
+        color: var(--c-light);
+        outline: 2px solid var(--c-main);
+    }
+}
+
+
+
+.advantages__card:nth-child(4),
+.advantages__card:nth-child(5) {
+    grid-column: span 3;
+    width: 100%;
+}
+
+.advantages__card-image {
+    flex: 0 0;
+}
+
+.advantages__card-heading {
+    font-size: clamp(22px, 1.8vw, 30px);
+    font-weight: 600;
+    line-height: 125%;
+    /* 37.5px */
+}
+
+.advantages__card-back {
+    .advantages__card-heading {
+        margin-bottom: 20px;
+        font-size: clamp(16px, 1.8vw, 30px);
+    }
+}
+
+// обертка для обратной стороны карточек
+.advantages__card-wrapper {
+    padding: clamp(10px, 2.5vw, 40px);
+
+    .advantages__card-text {
+        font-size: clamp(14px, 2vw, 16px);
+    }
+}
+
+.my-carousel-progress {
+    display: none;
+}
+
+
+@media (max-width: 1024px) {
+    .advantages__card {
+        min-height: 40vw;
+    }
+
+    .advantages__card {
+        grid-column: span 3;
+        width: 100%;
+    }
+
+    .advantages__card-image {
+        width: 10vw;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .advantages .advantages__overflow {
+        overflow: hidden;
+    }
+
+
+    .advantages__list {
+        gap: 0;
+    }
+
+    .advantages__card {
+        grid-column: 1 / -1;
+
+        padding: 40px clamp(20px, 2.5vw, 20px);
+        border: 2px solid var(--c-main);
+        background-color: var(--c-light);
+        
+        &:nth-child(4),
+        &:nth-child(5) {
+            grid-column: 1 / -1;
+            width: 100%;
+        }
+
+        &-back,
+        &-front {
+            display: flex;
+        }
+
+        &-back {
+            color: var(--c-main);
+
+            .advantages__card-heading {
+                display: none;
+            }
+        }
+
+        &-front {
+            row-gap: clamp(30px, 5vw, 60px);
+        }
+
+    }
+
+    .advantages__card-image {
+        display: block;
+        margin: 0 auto;
+        width: clamp(100px, 15vw, 200px);
+    }
+
+    .advantages__card-wrapper {
+        padding: 20px 0 0 0;
+    }
+
+    .advantages__card-text {
+        margin-bottom: 10px;
+        font-size: 16px;
+    }
+
+    .my-carousel-progress {
+        display: flex;
+    }
+}
+
+
+
+//если подключать анимацию через js (файл js/blocks/advantages_card.js)
+
+// .advantage__card--hovered {
+//     transform: rotateY(180deg);
+//     transition: transform .8s cubic-bezier(.34, 1.56, .64, 1);
+// }

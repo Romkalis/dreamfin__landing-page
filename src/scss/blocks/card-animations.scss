@@ -1,0 +1,104 @@
+.cards {
+    perspective: 500vw;
+}
+
+.card {
+    position: relative;
+
+    transform-style: preserve-3d;
+    transform-origin: center center;
+    transition: transform .4s ease-in-out;
+    // cubic-bezier(.34, 1.56, .64, 1);
+    will-change: transform; //оптимизация анимации детей
+
+
+    &:hover,
+    &:active {
+        transform: rotateY(180deg);
+        transition: transform .5s ease-in-out; //cubic-bezier(.34, 1.56, .64, 1); 
+        // если добавить то красота, но карточки начинают лагать, слишком большая нагрузка
+    }
+
+
+    &-face {
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        border-radius: clamp(10px, 3vw, 50px);
+    }
+
+    &-back {
+        position: absolute;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+        transform: rotateY(180deg);
+        box-sizing: border-box;
+        will-change: transform; //оптимизация анимации детей
+
+        &:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background-color: var(--c-main);
+            transform: rotateY(180deg);
+            will-change: transform; //оптимизация анимации детей
+
+        }
+    }
+
+    &-front {
+        z-index: 1;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .card {
+        width: 100%;
+        transform-style: none;
+        border-radius: clamp(10px, 3vw, 50px);
+        transition: none;
+        will-change: transform; //оптимизация анимации детей
+
+        &:hover {
+            transform: unset;
+        }
+
+        &-face {
+            width: 100%;
+            height: auto;
+            backface-visibility: hidden;
+            border-radius: clamp(10px, 3vw, 50px);
+            z-index: 0;
+        }
+
+        &-back {
+            position: static;
+            box-sizing: border-box;
+            outline: unset;
+            transform: unset;
+            will-change: unset;
+
+            .advantages__card-heading {
+                display: none;
+            }
+
+            &:before {
+                content: "";
+                position: absolute;
+                width: 0%;
+                height: 0%;
+            }
+        }
+
+        &-front {
+            row-gap: clamp(30px, 5vw, 60px);
+        }
+
+    }
+}

@@ -1,0 +1,127 @@
+.about {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, auto);
+    margin-bottom: clamp(40px, 16vw, 242px);
+    position: relative;
+}
+
+.about__title {
+    grid-row: 1/2;
+    grid-column: 1 / -1;
+    margin-bottom: clamp(40px, 4vw, 60px);
+}
+
+.about__text {
+    grid-column: 1 / 4;
+    grid-row: 2/3;
+
+    //настройки грид контейнера внутри блока
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, auto);
+    column-gap: 22px;
+}
+
+.about__text::before {
+    content: "";
+    grid-column: 1 / 2;
+    grid-row: 2/3;
+}
+
+.about__text-heading {
+    grid-row: 1 / 2;
+    grid-column: 1 / -1;
+    margin-bottom: clamp(20px, 2.5vw, 40px);
+    font-size: clamp(20px, 1.8vw, 28px);
+    line-height: 125%;
+    /* 35px */
+}
+
+.about__text-advantage {
+    grid-row: 2/3;
+    margin-bottom: clamp(40px, 6.3vw, 100px);
+
+}
+
+.about__text-target {
+    grid-row: 3 / 4;
+    grid-column: 1 / -1;
+
+    font-size: clamp(20px, 1.9vw, 30px);
+    font-weight: 600;
+    line-height: 125%;
+
+    padding: clamp(40px, 4vw, 65px) clamp(20px, 10vw, 150px);
+    border-radius: clamp(25px, 3.2vw, 50px);
+    border: 2px solid var(--c-main);
+    background: var(--accent-light);
+
+}
+
+.about__text-target--italic {
+    font-family: 'Open Sans Italic', sans-serif;
+}
+
+
+.about__image-picture {
+
+    position: absolute;
+    bottom: - 8vw;
+    right: 0;
+    width: clamp(300px, 34vw, 545px);
+    height: auto;
+    z-index: 2;
+
+}
+
+@media (max-width: 768px) {
+    
+    .about {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+    
+    .about__text {
+        grid-column: 1 / -1;
+        
+        display: flex;
+        flex-direction: column;
+    }
+
+    .about__text-heading {
+        margin-bottom: 20px;
+        font-size: clamp(16px, 1.8vw, 28px);
+        font-weight: 600;
+
+    }
+
+    .about__text-advantage {
+        grid-row: 2/3;
+        margin-bottom: clamp(10px, 4vw, 100px);
+        font-size: 14px;
+    }
+
+    
+    .about__text-target {
+        margin-top: 40px;
+    }
+
+    .about__image-picture {
+        position:static;
+        display: block;
+        margin: auto;
+        margin-top: -60px;
+        width: clamp(300px, 34vw, 545px);
+        height: auto;
+        z-index: 2;
+    }
+}
+
+@media (max-width: 468px) {
+    .about__title {
+    text-align: start;
+    }
+}

@@ -1,0 +1,223 @@
+.services__card-arrow,
+.services__card-arrow--back {
+    display: none;
+}
+
+
+
+
+.services {
+    text-align: center;
+    margin-bottom: clamp(100px, 12.5vw, 200px);
+}
+
+.services__title {
+    margin-bottom: clamp(40px, 3.8vw, 60px);
+}
+
+.services__description {
+    margin: auto;
+    max-width: 750px;
+    font-size: clamp(16px, 1.8vw, 28px);
+    line-height: 125%;
+    margin-bottom: 40px;
+}
+
+.services__cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.services__card-label {
+    display: grid;
+}
+
+.services__card {
+    width: 100%;
+    max-width: 750px;
+    background-color: var(--accent-light);
+    border-radius: clamp(10px, 3vw, 50px);
+    padding: 40px;
+    position: relative;
+}
+
+.services__card-back {
+    color: var(--c-light);
+    outline: 2px solid var(--c-main);
+    padding: 60px 40px;
+    text-align: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.services__card-front {
+    flex-direction: column;
+    align-items: start;
+    row-gap: clamp(30px, 5vw, 60px);
+}
+
+.services__card-title {
+    font-size: clamp(36px, 3.1vw, 50px);
+    font-weight: 700;
+    line-height: 120%;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.services__card-back-title {
+    font-size: clamp(16px, 1.8vw, 28px);
+    line-height: 125%;
+    margin-bottom: 20px;
+}
+
+.services__card-back-text {
+    font-size: clamp(14px, 1.5vw, 16px);
+    line-height: 140%;
+    max-width: 383px;
+}
+
+.services__card-button {
+    flex: 0 0 auto;
+    align-self: flex-start;
+    padding: 15px 90px;
+    margin-top: auto;
+}
+
+.services__card-back-image {
+    position: absolute;
+    width: 36%;
+    right: 13px;
+    bottom: 24px;
+}
+
+.services__showcard-checkbox {
+    display: none;
+}
+
+@media (max-width: 1280px) {
+    .services__card-back-text {
+        max-width: 350px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .services__card-back-image {
+        display: none;
+    }
+
+    .services__card-back-text {
+        max-width: 100%;
+    }
+
+    .services__card-button {
+        padding: auto;
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .services__cards {
+        perspective: 500vw;
+        padding: 0;
+        grid-template-columns: 1fr;
+    }
+
+    .services__card {
+        perspective: 500vw;
+        padding: 60px 0px;
+        min-height: 500px;
+        // position
+    }
+    .services__card-arrow {
+        display: block;
+        position: absolute;
+        content: '';
+        bottom: -40px;
+        right: 20px;
+        width: 24px;
+        height: 24px;
+    }
+    .services__card-arrow--back {
+        display: block;
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        width: 24px;
+        height: 24px;
+        filter: invert(95%) sepia(89%) saturate(2485%) hue-rotate(299deg) brightness(90%) contrast(75%);
+    }
+
+
+    .services__card-title {
+        margin-bottom: 77px;
+    }
+
+    .services__card-back-text {
+        margin-bottom: 24px;
+    }
+
+    .services__card-back-button {
+        margin-top: auto;
+    }
+
+    .services__showcard-checkbox:checked+.services__card-label .services__card {
+        transform: rotateY(180deg);
+        transition: transform .6s ease-in-out;
+        /* cubic-bezier(.34, 1.56, .64, 1); */
+        /* если добавить, то красота, но карточки начинают лагать, слишком большая нагрузка */
+    }
+
+    .services__card {
+        position: relative;
+        transform-style: preserve-3d;
+        transform-origin: center center;
+        transition: transform .8s cubic-bezier(.34, 1.56, .64, 1);
+        will-change: transform;
+        /* оптимизация анимации детей */
+    }
+
+    .services__card-face {
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+    }
+
+    .services__card-back {
+        display: flex;
+        box-sizing: border-box;
+        padding: 60px clamp(20px, 5vw, 40px);
+        color: var(--accent-light);
+        position: absolute;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+
+
+        transform: rotateY(180deg);
+        will-change: transform;
+        /* оптимизация анимации детей */
+
+        &:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background-color: var(--c-main);
+            transform: rotateY(180deg);
+            will-change: transform;
+            /* оптимизация анимации детей */
+        }
+    }
+
+    .services__card-front {
+        z-index: 0;
+        position: relative;
+    }
+
+}

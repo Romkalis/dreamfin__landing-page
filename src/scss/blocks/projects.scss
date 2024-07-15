@@ -1,0 +1,117 @@
+.projects {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: clamp(100px, 12.5vw, 200px);
+}
+
+.projects__title {
+    margin-bottom: clamp(40px, 3.8vw, 60px);
+}
+
+.projects__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    gap: 20px;
+    margin-bottom: clamp(40px, 3.8vw, 60px);
+}
+
+.projects__card {
+    border-radius: clamp(10px, 3vw, 50px);
+    border: 2px solid var(--c-main);
+    padding: 40px clamp(20px, 2.5vw, 40px);
+    min-height: 550px;
+    transition: all .3s ease-in-out;
+}
+
+.projects__card-title {
+    font-size: 28px;
+    line-height: 125%;
+    margin-bottom: 40px;
+}
+
+.projects__card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.projects__card-subtitle {
+    color: var(--text-dark);
+    font-size: clamp(14px, 1vw, 16px);
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.projects__card--text {
+    color: var(--text-c-medium);
+}
+
+.projects__card-list {
+    padding-left: 20px;
+    /* Отступ для корректного отображения */
+}
+
+.projects__card-item {
+    color: var(--text-c-medium);
+    list-style-type: disc;
+    /* Включение точек слева от списка */
+    max-width: 393px;
+    width: 100%;
+}
+
+.projects__card:hover {
+    background-color: var(--c-main);
+    color: var(--c-light);
+    transition: all .3s ease-in-out;
+
+    .projects__card-subtitle {
+        color: var(--c-light);
+    }
+
+    .projects__card--text,
+    .projects__card-item {
+        color: var(--accent-light);
+    }
+
+
+}
+
+.projects__button {
+    align-self: center;
+    width: 100%;
+    max-width: 494px;
+}
+
+
+
+@media (max-width: 1024px) {
+    .projects__list {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .projects__card {
+        min-width: 300px;
+        flex: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .projects__title {
+        text-align: start;
+    }
+
+    .projects__list {
+        flex-wrap: nowrap;
+        gap: 0;
+    }
+
+    .projects__card {
+
+        min-width: 300px;
+        flex: 1 1 auto;
+    }
+
+}

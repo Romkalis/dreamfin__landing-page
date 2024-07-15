@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dreamfin: Кейс 3</title>
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="prefetch" href="fonts/OpenSans.woff2" as="font">
+    <link rel="icon" type="image/x-icon" href="./img/favicons/favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="./img/favicons/apple-touch-icon.png">
+</head>
+
+<body>
+
+    @@include('blocks/header/header.html')
+
+    <main class="case case_3 container" id="top">
+        <h1 class="visually-hidden">Страница третьего кейса, о строительной компании</h1>
+        <h2 class="case__title">Строительная компания:<br>
+            Внедрение правильного и эффективного учёта. Сокращение затрат и увеличение выпуска услуг</h2>
+
+        <nav aria-label="Навигация по разделам кейса">
+            <ul class="case__nav">
+                <li class="case__nav-item"><a href="#trouble" class="case__nav-button button button--dark">Проблема</a>
+                </li>
+                <li class="case__nav-item"><a href="#solution" class="case__nav-button button button--dark">Решение</a>
+                </li>
+                <li class="case__nav-item"><a href="#result" class="case__nav-button button button--dark">Результат</a>
+                </li>
+            </ul>
+        </nav>
+
+        <article class="case__grid">
+            <section class="case__trouble case__card" id="trouble" aria-labelledby="trouble-heading">
+                <img src="../img/svgicons/case_trouble.svg" alt="изображение задумчивого мужчины" class="case__icon">
+                <h3 class="case__card-heading" id="trouble-heading">Проблема:</h3>
+                <p class="case__text">
+                    Компания столкнулась с проблемами учёта, низкой прибылью, высокой себестоимостью строительства.
+                    Высокая налоговая нагрузка также оказывала дополнительное давление на финансовые ресурсы компании.
+                </p>
+            </section>
+
+            <section class="case__solution case__card" id="solution" aria-labelledby="solution-heading">
+                <img src="../img/svgicons/case_solution.svg" alt="иконка вспыхнувшей лапочки" class="case__icon">
+                <h3 class="case__card-heading" id="solution-heading">Решение:</h3>
+                <p class="case__text">
+                    Проведение ряда мероприятий, направленных на увеличение чистой прибыли.
+                </p>
+            </section>
+
+            <section class="case__result case__card" id="result" aria-labelledby="result-heading">
+                <div class="case__result-content">
+                    <div class="case__result-heading">
+                        <img src="../img/svgicons/case_result.svg" alt="изображение цели для стрельбы"
+                            class="case__icon">
+                        <h3 class="case__card-heading" id="result-heading">Результат:</h3>
+                    </div>
+
+                    <div class="case__paragraph">
+                        <p class="case__text">
+                            Увеличение чистой прибыли:
+                        </p>
+
+                        <ul class="case__result-list">
+                            <li class="case__result-item">общая рентабельность увеличилась на 11% — даже больше, чем
+                                ожидало руководство;</li>
+                            <li class="case__result-item">среднее количество SKU в чеке выросло в 1,5 раза благодаря
+                                тому, что мы расширили ассортимент;</li>
+                            <li class="case__result-item">оборачиваемость товаров повысилась на 9%;</li>
+                            <li class="case__result-item">расходы на хранение в расчёте на единицу товара
+                                <br>сократились на 5%.
+                            </li>
+                        </ul>
+
+                        <p class="case__text">
+                            Сокращение налоговой нагрузки за счёт грамотного разделения бизнеса.
+                        </p>
+                        <p class="case__text">
+                            Внедрение обучающего центра (моя научная дипломная работа, которую мы внедрили в компании).
+                        </p>
+                    </div>
+
+                    <div class="case__paragraph-title case__paragraph-title--half table">
+                        <p class="paragraph__title case__table-title">Ниже представлена сравнительная таблица
+                            показателей работы компании за 2015 и 2016 года (когда Мария Бокарева там работала)</p>
+                    </div>
+                    <img class="case__image" src="../img/superhero/about_girl.png"
+                        alt="супердевушка держит в руках логотип dreamfin">
+
+                </div>
+
+                <table class="case__table">
+                    <caption class="visually-hidden">Таблица показателей работы компании за 2015 и 2016 года</caption>
+                    <thead>
+                        <tr class="case__table-row">
+                            <th class="case__table-row--title">Показатели</th>
+                            <th class="case__table-row--title">2015 год</th>
+                            <th class="case__table-row--title">2016 год</th>
+                            <th class="case__table-row--title">Итоги</th>
+                            <th class="case__table-row--title">%</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="case__table-row">
+                            <th class="case__table-row--title">Выручка <br> от реализации</th>
+                            <td class="case__table-cell">603 989 000</td>
+                            <td class="case__table-cell">1 292 347 000</td>
+                            <td class="case__table-cell">+688 358 000</td>
+                            <td class="case__table-cell">114%</td>
+                        </tr>
+                        <tr class="case__table-row">
+                            <th class="case__table-row--title">Чистая прибыль</th>
+                            <td class="case__table-cell">27 501 000</td>
+                            <td class="case__table-cell">86 009 000</td>
+                            <td class="case__table-cell">+58 508 000</td>
+                            <td class="case__table-cell">313%</td>
+                        </tr>
+                        <tr class="case__table-row">
+                            <th class="case__table-row--title">Рентабельность <br> по чистой прибыли</th>
+                            <td class="case__table-cell">4,55%</td>
+                            <td class="case__table-cell">6,66%</td>
+                            <td class="case__table-cell"></td>
+                            <td class="case__table-cell"></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <img src="../img/cases/table-image.jpg" alt="таблица результативности работы компании при работе Марии Бокаревой" class="case__table-image">
+            </section>
+
+            <div class="case__nav-top">
+                <a href="#top" class="case__nav-button button button--dark" aria-label="Наверх">Наверх</a>
+            </div>
+
+            <nav class="case__nav-cases" aria-label="Навигация по следующему и предыдущему кейсам">
+                <a href="case_2.html" class="case__nav-link">
+                    @@include('../img/svgicons/case_prev.svg')
+                    <span class="case__nav-text">Предыдущий кейс</span>
+                </a>
+                <a href="case_4.html" class="case__nav-link">
+                    <span class="case__nav-text">Следующий кейс</span>
+                    @@include('../img/svgicons/case_next.svg')
+                </a>
+            </nav>
+        </article>
+    </main>
+
+    @@include('blocks/footer/footer.html')
+
+    <!-- <script src="./js/index.bundle.js" type="module"></script> -->
+
+</body>
+
+</html>

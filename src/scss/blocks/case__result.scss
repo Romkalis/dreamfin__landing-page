@@ -1,0 +1,248 @@
+.case__result {
+    grid-column: 1 / -1;
+}
+
+.case__result-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    align-items: center;
+    margin-bottom: 40px;
+    column-gap: 20px;
+
+    position: relative;
+}
+
+.case__result-heading {
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+}
+
+.case__paragraph {
+    align-self: start;
+    margin-bottom: 40px;
+}
+
+.case__paragraph-title {
+    grid-column: 1 / -1;
+    margin-bottom: 20px;
+}
+
+.case__paragraph-title--half {
+    grid-column: 1 / 2;
+}
+
+
+.paragraph__text {
+    font-size: clamp(12px, 1vw, 16px);
+    line-height: 140%;
+    /* 22.4px */
+}
+
+.paragraph__title {
+    font-size: clamp(20px, 2vw, 28px);
+    line-height: 125%;
+    /* 35px */
+}
+
+.case__paragraph-link {
+    color: var(--c-main);
+    position: relative;
+}
+
+.case__paragraph-link:before {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--c-main);
+}
+
+.case__additional {
+    grid-column: 1 / -1;
+    margin-bottom: 40px;
+    width: 100%;
+
+    .case__image {
+        max-width: unset;
+    }
+}
+
+.case__image-block {
+    grid-column: 2/ -1;
+}
+
+.case__image-block-text {
+    margin: 0 auto;
+    margin-bottom: -50px;
+    max-width: 542px;
+
+    border-radius: clamp(30px, 3.2vw, 50px);
+    border: 2px solid var(--c-main);
+    background: var(--accent-light);
+    color: var(--text-dark);
+    padding: clamp(25px, 3.5vw, 45vw);
+    font-size: clamp(20px, 2vw, 30px);
+    font-weight: 600;
+    line-height: 125%;
+    /* 37.5px */
+}
+
+.case__result-list {
+    padding-left: 20px;
+}
+
+.case__result-item {
+    list-style-type: disc;
+}
+
+
+// case_1
+.case_1 .case__result-content {
+    display: grid;
+}
+
+// .case_3
+
+
+.case_3 .case__image {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin-right: 50px;
+    max-width: 450px;
+    min-width: 250px;
+    width: 28vw;
+}
+
+.case__table-title {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 140%;
+}
+
+.case__table {
+    display: table;
+    border-collapse: collapse;
+    max-width: 913px;
+    width: 100%;
+    font-size: clamp(12px, 1vw, 16px);
+
+    border: 2px solid var(--accent-dark);
+    border-radius: 25px;
+}
+
+.case__table-row,
+.case__table-cell {
+    border: 1px solid var(--accent-light);
+    padding: 10px 12px;
+}
+
+.case__table-image {
+    display: none;
+}
+
+.case__table-row--title {
+    padding: 10px 12px;
+}
+
+.case__founder-image {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.case__nav-cases {
+    grid-column: 1 / -1;
+
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    font-size: clamp(12px, 1vw, 16px);
+}
+
+.case__nav-link,
+.case__nav-link:visited {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    color: var(--text-dark);
+}
+
+.case__nav-link:hover svg {
+    fill: var(--c-main);
+}
+
+.case__nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0px;
+    right: 50%;
+    width: 0%;
+    height: 1px;
+    background-color: var(--c-main);
+    transition: all .3s ease-in-out;
+
+}
+
+.case__nav-link:hover {
+    color: var(--c-main);
+
+    &::after {
+        width: 100%;
+        transform: translateX(50%);
+    }
+}
+
+
+
+@media (min-width: 769px) {
+    .case_1 .case__result {
+        grid-column: 2 /-1;
+        grid-row: 1 / -1;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1280px) {
+    .case_1 .case__result-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .case__result-content {
+        grid-template-columns: 1fr;
+    }
+
+    .case__image-block {
+        grid-column: 1 / -1;
+    }
+
+    .case__table {
+        display: none;
+    }
+    .case__table-image {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    .case_4 .hide {
+        display: none;
+    }
+
+    .case_3 .case__image {
+        position: relative;
+        display: block;
+        right: 0;
+        top: 0;
+        margin: auto;
+        max-width: 450px;
+        width: 28vw;
+    }
+}

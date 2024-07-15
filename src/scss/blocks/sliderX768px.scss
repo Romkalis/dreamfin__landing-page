@@ -1,0 +1,45 @@
+.my-carousel-progress {
+    background: var(--accent-light);
+    margin-top: 30px;
+    border-radius: 5px;
+  }
+  
+  .my-carousel-progress-bar {
+    background: var(--c-main);
+    height: 4px;
+    transition: width 400ms ease;
+    width: 0;
+    border-radius: 5px;
+  }
+
+.splide__arrows {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.splide__arrow {
+    padding: 20px;
+    svg {
+      fill: var(--c-main); // Исходный цвет
+      
+    }
+    svg:hover {
+        fill: var(--accent-dark);
+    }
+  }
+.splide__arrow--prev {
+    padding-left: 0;
+}
+.splide__arrow--next {
+    padding-right: 0;
+}
+.slider__control-text {
+font-size: 18px;
+line-height: 125%; /* 22.5px */
+}
+
+.slider__counter-end {
+font-size: 14px;
+
+}
+

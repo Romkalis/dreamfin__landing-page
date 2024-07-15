@@ -1,0 +1,127 @@
+.founder {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, auto);
+    align-items: center;
+    margin-bottom: clamp(50px, 13vw, 200px);
+    column-gap: 30px;
+}
+
+.founder__text {
+    color: var(--text-dark);
+    grid-row: 2/3;
+    align-self: end;
+}
+
+.founder__text-title {
+    font-size: clamp(20px, 2vw, 30px);
+    font-weight: 600;
+    line-height: 125%;
+    max-width: clamp(235px, 23vw, 360px);
+    width: 100%;
+    margin-bottom: 10px;
+
+}
+
+.founder__text-title--italic {
+    font-family: 'Open Sans Italic', sans-serif;
+}
+
+.founder__founder-footnote {
+    font-size: clamp(16px, 2vw, 28px);
+    font-weight: 400;
+    line-height: 125%;
+    margin-bottom: 40px;
+}
+
+.founder__text-description {
+    color: var(--text-dark);
+/* Текст основной */
+font-size: clamp(14px, 1vw, 16px);
+font-style: normal;
+font-weight: 400;
+line-height: 140%; /* 22.4px */
+max-width: 363px;
+width: 100%;
+margin-bottom: 20px;
+}
+
+.founder__button {
+    grid-row: 3/4;
+    align-self: start;
+    width: 100%;
+    max-width: 365px;
+}
+
+
+.founder__image {
+    grid-row: 1/-1;
+    width: clamp(300px, 47vw, 751px);
+    height: auto;
+    position: relative;
+}
+
+
+
+.founder__image-description {
+    color: var(--text-dark);
+    position: absolute;
+    bottom: 20px;
+    left: clamp(20px, 2.5vw, 40px);
+    padding: 0 0;
+}
+
+@media (max-width: 768px) {
+    .founder {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, auto);
+        align-items: center;
+        justify-items: center;
+    }
+
+    .founder__text {
+        color: var(--text-dark);
+        grid-row: 1/2;
+        align-self: end;
+    }
+    .founder__founder-footnote {
+        margin-bottom: 20px;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 135%; /* 21.6px */
+    }
+    .founder__text-description {
+        max-width: 70vw;
+        margin-bottom: 40px;
+    }
+
+    .founder__button {
+        grid-row: 3/-1;
+        align-self: start;
+        width: 100%;
+        max-width: 365px;
+    }
+    
+    .founder__image {
+        grid-row: 2/3;
+        width: clamp(300px, 47vw, 751px);
+        height: auto;
+        position: relative;
+        height: clamp(350px, 22vw, 600px);
+        margin-bottom: 90px;
+    }
+
+    .founder__image-picture {
+        height: 100%;
+        min-height: clamp(350px, 22vw, 600px);
+        object-fit: cover;
+        border-radius: clamp(25px, 3.2vw, 50px);
+    }
+
+    .founder__image-description {
+        bottom: 20px;
+        left: 0;
+        bottom: -60px;
+    }
+}
