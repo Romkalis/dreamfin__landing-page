@@ -95,7 +95,8 @@
 
     .projects__card {
         min-width: 300px;
-        flex: 1;
+        flex: 1 0 auto;
+
     }
 }
 
@@ -108,11 +109,4 @@
         flex-wrap: nowrap;
         gap: 0;
     }
-
-    .projects__card {
-
-        min-width: 300px;
-        flex: 1 1 auto;
-    }
-
 }

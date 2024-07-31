@@ -13,6 +13,8 @@
     line-height: 125%; /* 20px */
     text-transform: uppercase;
     text-wrap: nowrap;
+    min-width: max-content;
+    text-align: center;
 
     
     &--dark {

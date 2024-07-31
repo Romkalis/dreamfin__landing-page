@@ -77,11 +77,13 @@
 @media (max-width: 768px) {
     .promo__wrapper {
         flex-direction: column;
+        padding: 40px 0;
     }
 
     .promo__image {
         flex-direction: column;
         flex: 1 0 auto;
+        padding: 0 40px;
     }
     .promo__image-picture {
         transform: translateX(-5%);
@@ -99,10 +101,15 @@
         border-color: var(--accent-dark);
     }
 
+    .promo__description-text {
+        padding: 0 40px;
+    }
     .promo__description-button {
+        margin-right: 0;
         margin: auto;
         padding: 15px 20px;
-        text-wrap: nowrap;
+        text-wrap: wrap;
+        width: max-content;
     }
 
 }

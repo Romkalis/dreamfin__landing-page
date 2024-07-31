@@ -54,6 +54,7 @@
   .header {
     display: flex;
     flex-wrap: wrap;
+    padding-bottom: 0px;
   }
   .header__logo-image {
     width: 100%;
@@ -78,6 +79,7 @@
     row-gap: 20px;
     padding-top: 10px;
     margin-bottom: 40px;
+    padding-bottom: 0px;
     position: relative;
   }
 

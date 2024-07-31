@@ -50,6 +50,8 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    border-radius: clamp(10px, 3vw, 50px);
+
 }
 
 
@@ -134,7 +136,6 @@
     .services__card-arrow {
         display: block;
         position: absolute;
-        content: '';
         bottom: -40px;
         right: 20px;
         width: 24px;
@@ -147,7 +148,6 @@
         right: 20px;
         width: 24px;
         height: 24px;
-        filter: invert(95%) sepia(89%) saturate(2485%) hue-rotate(299deg) brightness(90%) contrast(75%);
     }
 
 
