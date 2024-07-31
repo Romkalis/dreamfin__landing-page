@@ -1,0 +1,8 @@
+.disabled-link {
+    pointer-events: none;
+}
+
+.disabled-link.link::before {
+    width: 100%
+}
+

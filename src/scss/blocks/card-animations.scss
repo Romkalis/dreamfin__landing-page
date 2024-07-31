@@ -10,6 +10,7 @@
     transition: transform .4s ease-in-out;
     // cubic-bezier(.34, 1.56, .64, 1);
     will-change: transform; //оптимизация анимации детей
+    cursor: pointer;
 
 
     &:hover,

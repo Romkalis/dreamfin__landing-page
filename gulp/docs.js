@@ -33,6 +33,18 @@ const rename = require('gulp-rename');
 // SVG
 const svgsprite = require('gulp-svg-sprite');
 
+//favicons
+const gulpIf = require('gulp-if');
+
+
+// Функция для проверки существования файла
+function fileExists(filepath) {
+    return fs.existsSync(filepath);
+}
+
+
+
+
 gulp.task('clean:docs', function (done) {
 	if (fs.existsSync('./docs/')) {
 		return gulp
@@ -161,7 +173,9 @@ gulp.task('images:docs', function () {
 				)
 			)
 			.pipe(gulp.dest('./docs/img/'))
-	);
+			.pipe(gulp.src('./src/favicon.ico'))
+			.pipe(gulp.dest('./build/'))
+		)
 });
 
 const svgStack = {
@@ -217,6 +231,29 @@ gulp.task('files:docs', function () {
 		.src('./src/files/**/*')
 		.pipe(changed('./docs/files/'))
 		.pipe(gulp.dest('./docs/files/'));
+});
+
+// Задача для обработки favicon
+gulp.task('favicon:docs', function () {
+    const faviconPath = './src/favicon.ico';
+    if (fileExists(faviconPath)) {
+        return gulp.src(faviconPath)
+            .pipe(gulp.dest('./docs/'));
+    } else {
+        console.log('Favicon file does not exist.');
+        return Promise.resolve(); // Возвращаем завершенный промис
+    }
+});
+
+// Задача для проверки существования файлов .webmanifest и их копирования
+gulp.task('manifest:docs', function () {
+    const manifestPath = './src/*.webmanifest';
+    // Получаем список файлов, соответствующих шаблону
+    return gulp.src(manifestPath)
+        .pipe(gulpIf(file => fs.existsSync(file.path), gulp.dest('./docs/')))
+        .on('error', function (err) {
+            console.error('Error:', err.message);
+        });
 });
 
 gulp.task('js:docs', function () {

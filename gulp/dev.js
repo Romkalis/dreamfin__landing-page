@@ -19,8 +19,13 @@ const webpHTML = require('gulp-webp-retina-html');
 const imageminWebp = require('imagemin-webp');
 const rename = require('gulp-rename');
 const prettier = require('@bdchauvette/gulp-prettier');
+const gulpIf = require('gulp-if');
 
 
+// Функция для проверки существования файла
+function fileExists(filepath) {
+    return fs.existsSync(filepath);
+}
 
 gulp.task('clean:dev', function (done) {
 	if (fs.existsSync('./build/')) {
@@ -133,8 +138,33 @@ gulp.task('images:dev', function () {
 			.pipe(changed('./build/img/'))
 			.pipe(imagemin({ verbose: true }))
 			.pipe(gulp.dest('./build/img/'))
+			// .pipe(gulp.src('./src/favicon.ico'))
+			// .pipe(gulp.dest('./build/'))
+
 });
 
+// Задача для обработки favicon
+gulp.task('favicon:dev', function () {
+    const faviconPath = './src/favicon.ico';
+    if (fileExists(faviconPath)) {
+        return gulp.src(faviconPath)
+            .pipe(gulp.dest('./build/'));
+    } else {
+        console.log('Favicon file does not exist.');
+        return Promise.resolve(); // Возвращаем завершенный промис
+    }
+});
+
+// Задача для проверки существования файлов .webmanifest и их копирования
+gulp.task('manifest:dev', function () {
+    const manifestPath = './src/*.webmanifest';
+    // Получаем список файлов, соответствующих шаблону
+    return gulp.src(manifestPath)
+        .pipe(gulpIf(file => fs.existsSync(file.path), gulp.dest('./build/')))
+        .on('error', function (err) {
+            console.error('Error:', err.message);
+        });
+});
 
 
 
