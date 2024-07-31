@@ -1,3 +1,4 @@
+
 .disabled-link {
     pointer-events: none;
 }
@@ -6,3 +7,8 @@
     width: 100%
 }
 
+.disabled-link.footer__link {
+    color: var(--c-light);
+}
+
+// класс неактивного линка добавляетс через скрипт navlinkDeactivated.js
