@@ -6,6 +6,12 @@
     transform: rotateY(180deg);
     transition: transform 1.2s cubic-bezier(.34, 1.56, .64, 1);
 }
+@media (max-width: 769px) {
+    .rotation-area:hover .card {
+        transform: rotateY(0deg);
+        transition: transform 1.2s cubic-bezier(.34, 1.56, .64, 1);
+    }
+}
 
 .card {
     position: relative;
