@@ -1,4 +1,8 @@
-.header {
+// .header {
+//   display: flex;
+//   width: 100%;
+// }
+.header__wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -50,35 +54,57 @@
 }
 
 
-@media (min-width: 469px) and (max-width: 768px) {
-  .header {
-    display: flex;
-    flex-wrap: wrap;
-    padding-bottom: 0px;
-  }
-  .header__logo-image {
-    width: 100%;
-    max-width: 20vw;
-  }
-  .header__button {
-    padding: 10px 20px;
-  }
-  .header__navlist {
-    row-gap: 10px;
-    justify-content: space-between;
-  }
-}
+// @media (min-width: 469px) and (max-width: 768px) {
+//   .header {
+//     position: sticky;
+//     top: 0;
+//     z-index: 99;
+//     background: rgb(255,255,255);
+//     background: linear-gradient(180deg, rgba(255,255,255,1) 80%, rgba(0,0,0,0) 100%);
+//   }
+//   .header__wrapper {
+//     display: flex;
+//     flex-wrap: wrap;
+//     padding-bottom: 0px;
+//     height: auto;
+//   }
+//   .header__nav {
+//     position: absolute;
+//     top: -40px;
+//     left: 50%;
+//     transform: translateX(-50%);
+//     margin-top: 20px;
+//     padding-top: 40px;
+//   }
+//   .header__logo-image {
+//     width: 100%;
+//     max-width: 20vw;
+//   }
+//   .header__button {
+//     padding: 10px 20px;
+//   }
+//   .header__navlist {
+//     row-gap: 10px;
+//     justify-content: space-between;
+//   }
+// }
 
 
-@media (max-width: 468px) {
+@media (max-width: 769px) {
   .header {
+    position: sticky;
+    top: 0;
+    z-index: 99;
+    background: rgb(255,255,255);
+    background: linear-gradient(180deg, rgba(255,255,255,1) 80%, rgba(0,0,0,0) 100%);
+  }
+  .header__wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto;
     column-gap: 10px;
     row-gap: 20px;
     padding-top: 10px;
-    margin-bottom: 40px;
     padding-bottom: 0px;
     position: relative;
   }
@@ -148,9 +174,11 @@
     overflow: hidden;
 
     position: absolute;
-    top: 20px;
+    top: -40px;
     left: 50%;
     transform: translateX(-50%);
+    margin-top: 20px;
+    padding-top: 40px;
 
     display: flex;
     flex-direction: column;

@@ -14,11 +14,14 @@
 /* Links */
 a, button {
 	cursor: pointer;
+
 }
 
 a, a:link, a:visited  {
-	
     text-decoration: none;
+}
+a {
+	color: inherit;
 }
 
 a:hover  {

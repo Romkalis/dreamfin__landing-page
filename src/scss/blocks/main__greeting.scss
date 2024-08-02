@@ -35,9 +35,9 @@
     z-index: 2;
 }
 
-@media (min-width: 320px) and (max-width: 768px) {
+@media (min-width: 320px) and (max-width: 769px) {
     .main__greeting {
-        margin-bottom: 40px;
+        margin: 40px 0;
     }
     .main__greeting-image {
         height: 275px;
