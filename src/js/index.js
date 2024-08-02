@@ -8,6 +8,7 @@ import './blocks/servicesCardRemoveStylesOnTablet.js'
 
 import './blocks/intersections-show-button.js'
 import './blocks/navlinkDeactivated.js'
+import './blocks/disableStartAnimationInOldSafari.js'
 
 
 
